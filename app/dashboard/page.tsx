@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type ElementType } from "react"
 import { DashboardHeader } from "@/components/dashboard-header"
 import { OrderCard, type Order, type OrderStatus } from "@/components/order-card"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
@@ -83,7 +83,7 @@ const initialOrders: Order[] = [
   },
 ]
 
-const statusTabs: { value: OrderStatus | "todos"; label: string; icon: React.ElementType }[] = [
+const statusTabs: { value: OrderStatus | "todos"; label: string; icon: ElementType }[] = [
   { value: "todos", label: "Todos", icon: ClipboardList },
   { value: "pendente", label: "Pendentes", icon: Clock },
   { value: "preparo", label: "Em Preparo", icon: ChefHat },
@@ -122,7 +122,6 @@ export default function DashboardPage() {
       <DashboardHeader />
 
       <main className="mx-auto max-w-6xl px-4 py-8">
-        {/* Stats summary */}
         <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {(["pendente", "preparo", "pronto", "entregue"] as const).map((status) => {
             const count = getOrderCount(status)
@@ -153,7 +152,6 @@ export default function DashboardPage() {
           })}
         </div>
 
-        {/* Tabs and orders */}
         <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as OrderStatus | "todos")}>
           <TabsList className="mb-6 flex h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0">
             {statusTabs.map(({ value, label, icon: Icon }) => (
@@ -181,7 +179,9 @@ export default function DashboardPage() {
                 <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-card py-16">
                   <ClipboardList className="mb-4 h-12 w-12 text-muted-foreground/50" />
                   <p className="text-lg font-medium text-muted-foreground">
-                    Nenhum pedido {value !== "todos" && `com status "${statusTabs.find(t => t.value === value)?.label}"`}
+                    Nenhum pedido{" "}
+                    {value !== "todos" &&
+                      `com status "${statusTabs.find((t) => t.value === value)?.label}"`}
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground/70">
                     Os pedidos aparecerao aqui quando chegarem
@@ -190,7 +190,11 @@ export default function DashboardPage() {
               ) : (
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {filteredOrders.map((order) => (
-                    <OrderCard key={order.id} order={order} onStatusChange={handleStatusChange} />
+                    <OrderCard
+                      key={order.id}
+                      order={order}
+                      onStatusChange={handleStatusChange}
+                    />
                   ))}
                 </div>
               )}

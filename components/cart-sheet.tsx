@@ -6,6 +6,7 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
+  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
@@ -59,6 +60,9 @@ export function CartSheet({
             <ShoppingCart className="h-5 w-5 text-primary" />
             Seu Carrinho
           </SheetTitle>
+          <SheetDescription className="sr-only">
+            Itens selecionados e total do pedido.
+          </SheetDescription>
         </SheetHeader>
 
         {items.length === 0 ? (

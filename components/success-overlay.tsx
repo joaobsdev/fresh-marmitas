@@ -61,10 +61,10 @@ export function SuccessOverlay({ show, onClose }: SuccessOverlayProps) {
           Aguarde a confirmacao!
         </p>
         <div
-          className={`mt-2 h-1 rounded-full bg-primary transition-all duration-[3500ms] ease-linear ${
+          className={`mt-2 h-1 rounded-full bg-primary transition-all ease-linear ${
             animateIn ? "w-full" : "w-0"
           }`}
-          style={{ maxWidth: "200px" }}
+          style={{ maxWidth: "200px", transitionDuration: "3500ms" }}
         />
       </div>
     </div>
