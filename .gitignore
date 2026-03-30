@@ -33,6 +33,9 @@ lerna-debug.log*
 *.tsbuildinfo
 .eslintcache
 
+# Next.js TypeScript env (optional to track)
+next-env.d.ts
+
 # Editor/IDE
 .vscode/
 .idea/
