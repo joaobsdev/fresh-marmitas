@@ -48,14 +48,12 @@ export function MealCard({
           : "border-transparent shadow-md hover:shadow-lg hover:-translate-y-0.5"
       )}
     >
-      {/* Selected indicator */}
       {isSelected && (
         <div className="absolute right-3 top-3 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-primary shadow-md">
           <Check className="h-4 w-4 text-primary-foreground" />
         </div>
       )}
 
-      {/* Image */}
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
           src={meal.image}
@@ -67,7 +65,6 @@ export function MealCard({
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="flex flex-wrap gap-1.5">
           {meal.tags.map((tag) => (
@@ -92,7 +89,6 @@ export function MealCard({
             R$ {meal.price.toFixed(2).replace(".", ",")}
           </span>
 
-          {/* Quantity controls */}
           {isSelected && (
             <div
               className="flex items-center gap-2"

@@ -98,7 +98,6 @@ export function OrderCard({ order, onStatusChange }: OrderCardProps) {
         isAnimating && "scale-[0.98] opacity-70"
       )}
     >
-      {/* Status header */}
       <div className={cn("flex items-center justify-between px-4 py-3", config.bgColor)}>
         <div className="flex items-center gap-2">
           <StatusIcon className={cn("h-4 w-4", config.color)} />
@@ -107,9 +106,7 @@ export function OrderCard({ order, onStatusChange }: OrderCardProps) {
         <span className="text-xs text-muted-foreground">#{order.id}</span>
       </div>
 
-      {/* Order content */}
       <div className="flex flex-col gap-4 p-4">
-        {/* Customer info */}
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <User className="h-4 w-4 text-muted-foreground" />
@@ -125,7 +122,6 @@ export function OrderCard({ order, onStatusChange }: OrderCardProps) {
           </div>
         </div>
 
-        {/* Order items */}
         <div className="rounded-lg bg-muted/50 p-3">
           <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Pedido
@@ -150,7 +146,6 @@ export function OrderCard({ order, onStatusChange }: OrderCardProps) {
           </div>
         </div>
 
-        {/* Observation */}
         {order.observation && (
           <div className="flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
             <FileText className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
@@ -163,7 +158,6 @@ export function OrderCard({ order, onStatusChange }: OrderCardProps) {
           </div>
         )}
 
-        {/* Status buttons */}
         <div className="flex flex-wrap gap-2">
           {statusButtons.map(({ status, icon: Icon, label }) => (
             <button

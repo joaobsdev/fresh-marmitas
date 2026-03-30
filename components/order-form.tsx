@@ -47,7 +47,6 @@ export function OrderForm({ items, onSubmit, isSubmitting }: OrderFormProps) {
 
   return (
     <div className="space-y-6">
-      {/* Order summary */}
       <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
         <h3 className="mb-4 font-serif text-lg text-card-foreground">
           Resumo do pedido
@@ -80,7 +79,6 @@ export function OrderForm({ items, onSubmit, isSubmitting }: OrderFormProps) {
         </div>
       </div>
 
-      {/* Notes */}
       <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
         <label
           htmlFor="order-notes"
@@ -99,7 +97,6 @@ export function OrderForm({ items, onSubmit, isSubmitting }: OrderFormProps) {
         />
       </div>
 
-      {/* Payment */}
       <div className="rounded-lg border border-border bg-card p-5 shadow-sm">
         <h3 className="mb-3 font-serif text-lg text-card-foreground">
           Forma de pagamento
@@ -127,7 +124,6 @@ export function OrderForm({ items, onSubmit, isSubmitting }: OrderFormProps) {
         </div>
       </div>
 
-      {/* Submit button */}
       <button
         type="button"
         onClick={handleSubmit}

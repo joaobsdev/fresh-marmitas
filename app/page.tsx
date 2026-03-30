@@ -129,7 +129,6 @@ export default function FreshMarmitasPage() {
       />
 
       <main className="mx-auto max-w-5xl px-4 py-8">
-        {/* Hero section */}
         <section className="mb-10 text-center">
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
             <UtensilsCrossed className="h-7 w-7 text-primary" />
@@ -143,7 +142,6 @@ export default function FreshMarmitasPage() {
           </p>
         </section>
 
-        {/* Meals grid */}
         <section className="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {meals.map((meal) => (
             <MealCard
@@ -157,7 +155,6 @@ export default function FreshMarmitasPage() {
           ))}
         </section>
 
-        {/* Order form */}
         {selectedItems.length > 0 && (
           <section className="mx-auto max-w-lg pb-12">
             <OrderForm
@@ -169,7 +166,6 @@ export default function FreshMarmitasPage() {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="border-t border-border bg-card py-6">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <p className="text-sm text-muted-foreground">
