@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, DM_Serif_Display } from 'next/font/google'
 
-import './globals.css'
+import '../styles/globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,8 +24,7 @@ export const viewport: Viewport = {
   themeColor: '#2d8a4e',
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  userScalable: true,
 }
 
 export default function RootLayout({
