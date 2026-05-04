@@ -34,6 +34,7 @@ A **Fresh Marmitas** é uma plataforma digital que conecta clientes a uma alimen
 - ## 🛠️ Tecnologias Utilizadas
 
 - **React**
+- **Next.JS**
 - **TypeScript**
 - **Tailwind CSS**
 - **Context API**
